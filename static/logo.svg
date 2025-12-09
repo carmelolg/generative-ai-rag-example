@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">generative-ai-rag-example logo</title>
+  <desc id="logoDesc">Stylized G in a circle with a small document icon, simple flat colors.</desc>
+  <rect width="100%" height="100%" fill="none" />
+  <defs>
+    <linearGradient id="ggrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#6EE7B7" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(8,8)">
+    <circle cx="32" cy="24" r="24" fill="url(#ggrad)" />
+    <path d="M22 18c2-2 6-2 8 0s2 6 0 8c-2 2-6 2-8 0s-2-6 0-8z" fill="#fff" opacity="0.95" />
+    <rect x="64" y="2" width="140" height="40" rx="6" fill="#0F172A" />
+    <text x="76" y="28" font-family="Segoe UI, Roboto, Arial" font-size="14" fill="#FFF">generative-ai-rag-example</text>
+  </g>
+</svg>
+
