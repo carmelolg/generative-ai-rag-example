@@ -2,25 +2,26 @@
 
 ![logo](static/logo.svg)
 
+# Summary
 A small example project that demonstrates a Retrieval-Augmented Generation (RAG) pattern using local embeddings and a language model.
 
 This repository contains helper utilities to build embeddings, chunk and query a small knowledge base, and stream responses from a local or configured language model.
 
-Features
+# Features
 - Build and store embeddings for text chunks
 - Find most relevant chunks for a query using cosine similarity
 - Generate embeddings from a configured embedding model
 - Stream chat responses from a configured language model
 
-Requirements
+# Requirements
 - Python 3.10+
 - See `requirements.txt` for Python dependencies
 
-Environment variables
+# Environment variables
 - `EMBEDDING_MODEL` — Embedding model identifier (read from environment). Example default used in code: `nomic-embed-text:latest`.
 - `LANGUAGE_MODEL` — Language model identifier (read from environment). Example default used in code: `gemma3:270m`.
 
-Install
+# Getting started
 
 1. Create and activate a virtual environment:
 
@@ -35,7 +36,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Usage
+# Usage
 
 - Configure environment variables (recommended in a `.env` file or your shell):
 
@@ -50,14 +51,14 @@ export LANGUAGE_MODEL="gemma3:270m"
 python main.py
 ```
 
-API / utilities
+# API / utilities
 
 - `lib/OllamaUtils.py` — small wrapper to call the local `ollama` client for embeddings and chat. The module reads `EMBEDDING_MODEL` and `LANGUAGE_MODEL` from environment variables.
 - `lib/MathUtils.py` — cosine similarity helper used to rank chunks by relevance.
 - `lib/PromptUtils.py` — prompt templates and helpers.
 - `lib/Service.py` — higher-level orchestration and service functions.
 
-Embedding a string
+### Embedding a string
 
 The project exposes a helper to produce an embedding from a text string. Example usage (pseudo):
 
@@ -68,15 +69,15 @@ embedding = embed_text("Hello world")
 print(len(embedding))
 ```
 
-License
+# License
 
-This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). See `LICENSE.md` for the full license text.
+![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
 
-Contributing
+This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**. 
 
-Contributions are welcome. Please open an issue or a pull request.
+See `LICENSE.md` for the full license text.
 
-Contact
+# Contact
 
 For questions or help, open an issue in this repository.
 
