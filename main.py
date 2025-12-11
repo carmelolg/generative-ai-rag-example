@@ -1,29 +1,35 @@
-from dotenv import load_dotenv
+from lib import Service as Service, OllamaUtils as OllamaUtils, PromptUtils as PromptUtils
 
-from lib import Service as IOUtils
-from lib import Service as Service
-from lib import OllamaUtils as OllamaUtils
-from lib import PromptUtils as PromptUtils
-
-# Load .env (optional) and read model names with fallbacks
-load_dotenv()
 
 # Load the dataset
-dataset = IOUtils.build_dataset('static/cat-facts.txt')
+dataset = Service.build_dataset(file_path='static/mc-cartney-story.txt')
 
 # Each element in the "knowledge" will be a tuple (chunk, embedding)
 # The embedding is a list of floats, for example: [0.1, 0.04, -0.34, 0.21, ...]
-knowledge = IOUtils.build_knowledge(dataset=dataset)
+knowledge = Service.build_knowledge(dataset=dataset)
 
-# Chatbot
-user_query = input('Ask me a question: ')
-retrieved_knowledge = Service.get_most_relevant_chunks(query=user_query, knowledge=knowledge, top_n=5)
+def get_most_relevant_chunks(query, knowledge, top_n):
+    return Service.get_most_relevant_chunks(query=query, knowledge=knowledge, top_n=top_n)
 
-print('Retrieved knowledge:')
-for chunk, similarity in retrieved_knowledge:
-    print(f' - (similarity: {similarity:.2f}) {chunk}')
 
-OllamaUtils.chat(
-    user_prompt=user_query,
-    system_prompt=PromptUtils.get_system_prompt(knowledge=retrieved_knowledge)
-)
+def chat(user_prompt):
+    retrieved_knowledge = get_most_relevant_chunks(user_prompt, knowledge, 5)
+    #print('Retrieved knowledge:')
+    #for chunk, similarity in retrieved_knowledge:
+    #    print(f' - (similarity: {similarity:.2f}) {chunk}')
+
+    OllamaUtils.chat(
+        user_prompt=user_prompt,
+        system_prompt=PromptUtils.get_system_prompt(knowledge=retrieved_knowledge)
+    )
+
+
+# Start chat
+while True:
+    user_query = input('\nUser > ')
+    if user_query.lower() in ['exit', 'quit']:
+        break
+    else:
+        chat(user_query)
+
+

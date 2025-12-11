@@ -6,12 +6,13 @@ This module intentionally imports the real `ollama` package (the one
 installed from PyPI) and exposes a simple function `embed_text` that
 accepts a string and returns its embedding as a list of floats.
 """
-from pyexpat.errors import messages
 from typing import List
 import ollama as _ollama_client
-from lib import PromptUtils as PromptUtils
 
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 EMBEDDING_MODEL = os.getenv('EMBEDDING_MODEL', 'nomic-embed-text:latest')
 LANGUAGE_MODEL = os.getenv('LANGUAGE_MODEL', 'gemma3:270m')
@@ -41,6 +42,6 @@ def chat(
     )
 
     # print the response from the chatbot in real-time
-    print('Chatbot response:')
+    print('Assistant >', end=' ')
     for chunk in stream:
         print(chunk['message']['content'], end='', flush=True)

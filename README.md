@@ -14,6 +14,7 @@ This repository contains helper utilities to build embeddings, chunk and query a
 - Stream chat responses from a configured language model
 
 # Requirements
+- Ollama CLI installed and configured: https://ollama.com/docs/cli
 - Python 3.10+
 - See `requirements.txt` for Python dependencies
 
