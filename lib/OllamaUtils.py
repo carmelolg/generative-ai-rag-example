@@ -39,6 +39,7 @@ def chat(
         model=LANGUAGE_MODEL,
         messages=_messages,
         stream=True,
+        think=True
     )
 
     # print the response from the chatbot in real-time
