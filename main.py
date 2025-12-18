@@ -23,7 +23,6 @@ def chat(user_prompt):
         system_prompt=PromptUtils.get_system_prompt(knowledge=retrieved_knowledge)
     )
 
-
 # Start chat
 while True:
     user_query = input('\nUser > ')
@@ -31,5 +30,6 @@ while True:
         break
     else:
         chat(user_query)
+
 
 
