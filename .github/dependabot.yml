@@ -13,9 +13,6 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-    # Automatically merge minor and patch updates for low-risk dependencies
-    reviewers:
-      - "carmelolg"
     
   # Enable version updates for GitHub Actions
   - package-ecosystem: "github-actions"
