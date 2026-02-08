@@ -15,8 +15,15 @@ This repository contains helper utilities to build embeddings, chunk and query a
 
 # Requirements
 - Ollama CLI installed and configured: https://ollama.com/docs/cli
-- Python 3.10+
+- Python 3.10+ (recommended: 3.12+)
 - See `requirements.txt` for Python dependencies
+
+## Security
+This project follows security best practices:
+- Dependencies are actively monitored for vulnerabilities
+- Automated security scanning via GitHub Actions
+- Dependabot enabled for automatic updates
+- See [SECURITY.md](SECURITY.md) for more details
 
 # Environment variables
 - `EMBEDDING_MODEL` — Embedding model identifier (read from environment). Example default used in code: `nomic-embed-text:latest`.
