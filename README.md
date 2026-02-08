@@ -15,8 +15,15 @@ This repository contains helper utilities to build embeddings, chunk and query a
 
 # Requirements
 - Ollama CLI installed and configured: https://ollama.com/docs/cli
-- Python 3.10+
+- Python 3.10+ (recommended: 3.12+)
 - See `requirements.txt` for Python dependencies
+
+## Security
+This project follows security best practices:
+- Dependencies are actively monitored for vulnerabilities
+- Automated security scanning via GitHub Actions
+- Dependabot enabled for automatic updates
+- See [SECURITY.md](SECURITY.md) for more details
 
 # Environment variables
 - `EMBEDDING_MODEL` — Embedding model identifier (read from environment). Example default used in code: `nomic-embed-text:latest`.
@@ -35,6 +42,35 @@ source .venv/bin/activate
 
 ```bash
 pip install -r requirements.txt
+```
+
+**For development:**
+```bash
+# Install development dependencies (includes security scanning tools)
+make install-dev
+# OR
+pip install -r requirements-dev.txt
+```
+
+# Development
+
+## Available Make Commands
+
+```bash
+make install        # Install production dependencies
+make install-dev    # Install development dependencies
+make security-scan  # Run security vulnerability scan
+make clean          # Remove cache and temporary files
+```
+
+## Security Scanning
+
+To manually check for vulnerabilities:
+
+```bash
+make security-scan
+# OR
+pip-audit -r requirements.txt
 ```
 
 # Usage

@@ -1,3 +1,4 @@
-ollama==0.6.1
-python-dotenv==1.2.1
-
+# Core dependencies for RAG example
+# Using compatible release operator (~=) to allow patch updates while preventing breaking changes
+ollama~=0.6.1
+python-dotenv~=1.2.1

@@ -1,0 +1,14 @@
+# Development and security scanning dependencies
+# These are not required for running the application but useful for development
+
+# Security scanning
+pip-audit>=2.10.0
+safety>=3.0.0
+
+# Code quality
+ruff>=0.8.0
+mypy>=1.15.0
+
+# Testing (if tests are added in the future)
+pytest>=8.0.0
+pytest-cov>=6.0.0
