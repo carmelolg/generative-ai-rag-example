@@ -44,6 +44,35 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+**For development:**
+```bash
+# Install development dependencies (includes security scanning tools)
+make install-dev
+# OR
+pip install -r requirements-dev.txt
+```
+
+# Development
+
+## Available Make Commands
+
+```bash
+make install        # Install production dependencies
+make install-dev    # Install development dependencies
+make security-scan  # Run security vulnerability scan
+make clean          # Remove cache and temporary files
+```
+
+## Security Scanning
+
+To manually check for vulnerabilities:
+
+```bash
+make security-scan
+# OR
+pip-audit -r requirements.txt
+```
+
 # Usage
 
 - Configure environment variables (recommended in a `.env` file or your shell):

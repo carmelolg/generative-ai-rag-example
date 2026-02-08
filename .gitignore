@@ -21,3 +21,16 @@ dist/
 .idea/
 .vscode/
 
+# Security scan reports
+pip-audit-report.json
+safety-report.json
+
+# Environment files (contains secrets)
+.env
+.env.local
+.env.*.local
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
