@@ -6,7 +6,7 @@ pip-audit>=2.10.0
 safety>=3.0.0
 
 # Code quality
-ruff>=0.8.0
+ruff>=0.15.12
 mypy>=1.15.0
 
 # Testing (if tests are added in the future)
