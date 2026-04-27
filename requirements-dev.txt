@@ -3,7 +3,7 @@
 
 # Security scanning
 pip-audit>=2.10.0
-safety>=3.0.0
+safety>=3.7.0
 
 # Code quality
 ruff>=0.8.0
