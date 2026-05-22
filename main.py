@@ -2,7 +2,8 @@ from lib import Service as Service, OllamaUtils as OllamaUtils, PromptUtils as P
 
 
 # Load the dataset
-dataset = Service.build_dataset(file_path='static/mc-cartney-story.txt')
+#dataset = Service.build_dataset(file_path='static/mc-cartney-story.txt')
+dataset = Service.build_dataset(file_path='static/cornelius-truffleton-story.txt')
 
 # Each element in the "knowledge" will be a tuple (chunk, embedding)
 # The embedding is a list of floats, for example: [0.1, 0.04, -0.34, 0.21, ...]
